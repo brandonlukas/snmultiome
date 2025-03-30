@@ -1,0 +1,25 @@
+data_dir: "/home/brandon/data/pingyin/snmultiome/input/"
+results_dir: "results/"
+
+samples:
+  - 1619LM
+  - 1619MM
+  - 1633LM
+  - 1633MM-repeat
+
+RNA:
+  celltypist_model: "Human_Endometrium_Atlas.pkl"
+  qc:
+    min_genes: 200
+    min_counts: 500
+    pct_counts_mt: 5
+    pct_counts_ribo: 5
+    doublet_score: 0.3
+    min_cells: 3
+
+ATAC:
+  blacklist: "resources/hg38-blacklist.v2.bed"
+  qc:
+    min_tsse: 7
+    min_counts: 1000
+    min_cells: 3 # Used for cellxgene

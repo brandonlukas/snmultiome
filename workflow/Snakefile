@@ -1,0 +1,12 @@
+configfile: "config/config.yaml"
+
+
+include: "rules/sample.smk"
+
+
+rule all:
+    input:
+        expand(
+            config["results_dir"] + "{sample}/init.h5mu",
+            sample=config["samples"],
+        ),
