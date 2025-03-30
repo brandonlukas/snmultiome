@@ -1,5 +1,5 @@
 .snakemake
 results/
-sysvi_tutorial.ipynb
-test.py*
+tutorial_*
+test*
 upload_*
