@@ -2,11 +2,13 @@ configfile: "config/config.yaml"
 
 
 include: "rules/0_initialization.smk"
+include: "rules/1_qc_metrics.smk"
 
 
 rule all:
     input:
         expand(
-            config["results_dir"] + "0_initialization/{sample}/{sample}.h5mu",
+            config["results_dir"] + "1_qc_metrics/{sample}/{sample}.{ext}",
+            ext=["rna.h5ad", "atac.h5ad"],
             sample=config["samples"],
         ),
