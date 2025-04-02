@@ -38,7 +38,7 @@ rule combine_metrics:
         "../notebooks/1_qc_metrics/3-combine_metrics.py.ipynb"
 
 
-rule aggregate_metrics:
+rule aggregate_qc_metrics:
     input:
         expand(
             config["results_dir"] + "1_qc_metrics/{sample}/{sample}.h5mu",
@@ -49,4 +49,4 @@ rule aggregate_metrics:
     params:
         samples=config["samples"],
     script:
-        "../scripts/1_qc_metrics/aggregate_metrics.py"
+        "../scripts/1_qc_metrics/aggregate_qc_metrics.py"
