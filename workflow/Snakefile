@@ -4,12 +4,13 @@ configfile: "config/config.yaml"
 include: "rules/0_initialization.smk"
 include: "rules/1_qc_metrics.smk"
 include: "rules/2_filtering.smk"
+include: "rules/3_analysis.smk"
 
 
 rule all:
     input:
         config["results_dir"] + "1_qc_metrics/qc_metrics.parquet",
         expand(
-            config["results_dir"] + "2_filtering/{sample}/{sample}.h5mu",
+            config["results_dir"] + "3_analysis/{sample}/{sample}.rna.h5ad",
             sample=config["samples"],
         ),
