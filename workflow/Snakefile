@@ -11,6 +11,6 @@ rule all:
     input:
         config["results_dir"] + "1_qc_metrics/qc_metrics.parquet",
         expand(
-            config["results_dir"] + "3_analysis/{sample}/{sample}.rna.h5ad",
+            config["results_dir"] + "3_analysis/{sample}/{sample}.atac.h5ad",
             sample=config["samples"],
         ),
